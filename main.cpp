@@ -25,14 +25,13 @@ bool SetVariable(LPCTSTR name, LPCTSTR value, bool global)
     return false;
 }
 
-int PrintUsage()
+void PrintUsage()
 {
     wprintf(L"Set user variable:\n");
     wprintf(L"\tenvmod.exe /u <name> <value>\n");
     wprintf(L"\n");
     wprintf(L"Set system variable:\n");
     wprintf(L"\tenvmod.exe /s <name> <value>\n");
-    return 0;
 }
 
 
