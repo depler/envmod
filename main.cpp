@@ -17,7 +17,7 @@ bool SetVariable(LPCTSTR name, LPCTSTR value, bool global)
 
         if (setStatus == ERROR_SUCCESS)
         {
-            SendMessage(HWND_BROADCAST, WM_SETTINGCHANGE, 0, (LPARAM)"Environment");
+            SendMessageTimeout(HWND_BROADCAST, WM_SETTINGCHANGE, 0, (LPARAM)L"Environment", SMTO_ABORTIFHUNG, 1000, NULL);
             return true;
         }
     }
