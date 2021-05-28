@@ -41,7 +41,7 @@ int wmain(int argc, wchar_t* argv[])
     if (argc < 4)
     {
         PrintUsage();
-        return 0;
+        return 1;
     }
 
     bool global;
@@ -52,13 +52,17 @@ int wmain(int argc, wchar_t* argv[])
     else
     {
         PrintUsage();
-        return 0;
+        return 1;
     }
 
     if (SetVariable(argv[2], argv[3], global))
+    {
         wprintf(L"Variable \"%s\" set ok", argv[2]);
+        return 0;
+    }
     else
+    {
         wprintf(L"Variable \"%s\" set failed", argv[2]);
-
-    return 0;
+        return 1;
+    }
 }
