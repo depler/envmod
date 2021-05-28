@@ -60,5 +60,5 @@ int wmain(int argc, wchar_t* argv[])
     else
         wprintf(L"Variable \"%s\" set failed", argv[2]);
 
-	return 0;
+    return 0;
 }
